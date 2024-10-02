@@ -12,7 +12,7 @@ interface Url {
 
 
 const urls:Url[] = [
-    { href: '/', icon: <House />, text: 'Dashboard' },
+    { href: '/', icon: <House />, text: 'Home' },
     { href: '/assets', icon: <ChartPie />, text: 'My Assets' },
     { href: '/transactions', icon: <ReceiptText />, text: 'Transactions' },
     { href: '/Explore', icon: <Compass />, text: 'Explore' },
@@ -29,7 +29,7 @@ export default function Sidebar(): JSX.Element {
         <aside className="flex flex-col w-64 h-screen bg-[#04040D] text-white pt-10 border-r-2 border-[#212121]">
         <div className="flex flex-row justify-start items-center gap-2 px-10">
         <Origami size={22} />
-        <h1 className="text-2xl font-medium text-center tracking-tight">Stocks</h1>
+        <h3 className="text-2xl font-medium text-center tracking-tight">Stocks</h3>
         </div>
         <nav className="flex flex-col justify-between h-full mt-10">
         <div className="px-10">
