@@ -3,6 +3,7 @@ import "./globals.css";
 import Sidebar from "@/components/SideBar/Sidebar";
 import NavBar from "@/components/NavBar/NavBar";
 import { inter } from "@/utils/fonts";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "stocks",
