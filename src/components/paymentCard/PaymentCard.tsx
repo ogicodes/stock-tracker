@@ -3,9 +3,10 @@ import visa from "@/svg/visa-pay-logo-svgrepo-com.svg";
 import mastercard from "@/svg/mastercard-svgrepo-com.svg";
 import amex from "@/svg/american-express-logo-svgrepo-com.svg";
 import Image from "next/image";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface PaymentType {
-    type: any;
+    type: StaticImport;
     lastFourDigits: string;
     limit: string;
     }
@@ -31,8 +32,8 @@ const paymentTypes: PaymentType[] = [
 export default function PaymentCard(): JSX.Element {
   return (
     <>
-    {paymentTypes.map((paymentType) => (
-    <div className="p-4 hover:bg-zinc-900/90 cursor-pointer rounded-sm transition-all">
+    {paymentTypes.map((paymentType, idx) => (
+    <div key={idx} className="p-4 hover:bg-zinc-900/90 cursor-pointer rounded-sm transition-all">
       <div className="flex items-center justify-between">
         <div className="flex items-center justify-center">
             <Image src={paymentType.type} alt="payment type" width={40} height={40} />

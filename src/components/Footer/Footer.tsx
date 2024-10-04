@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { DoorOpen } from "lucide-react";
 
 export default function Footer() {
   return (

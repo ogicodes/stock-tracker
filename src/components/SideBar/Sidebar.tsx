@@ -8,14 +8,15 @@ interface Url {
     href: string;
     icon: JSX.Element;
     text: string;
+    disabled?: boolean;
 }
 
 
 const urls:Url[] = [
-    { href: '/', icon: <House />, text: 'Home' },
-    { href: '/assets', icon: <ChartPie />, text: 'My Assets' },
-    { href: '/transactions', icon: <ReceiptText />, text: 'Transactions' },
-    { href: '/Explore', icon: <Compass />, text: 'Explore' },
+    { href: '/dashboard', icon: <House />, text: 'Home' },
+    { href: '/dashboard/assets', icon: <ChartPie />, text: 'My Assets' },
+    { href: '/dashboard/transactions', icon: <ReceiptText />, text: 'Transactions' },
+    { href: '/dashboard/Explore', icon: <Compass />, text: 'Explore', disabled: true },
 ]
 
 export default function Sidebar(): JSX.Element {
@@ -39,6 +40,7 @@ export default function Sidebar(): JSX.Element {
             className="flex flex-row items-center justify-start w-full h-12 text-md font-medium mb-4"
             onClick={() => navigate(url.href)}
             variant={pathname === url.href ? "default" : "ghost"}
+            disabled={url.disabled? true : false}
             >
             {url.icon}
             <span className="pl-2">{url.text}</span>
@@ -46,7 +48,7 @@ export default function Sidebar(): JSX.Element {
         ))}
         </div>
         <div className="border-t-2 border-[#212121] fixed bottom-0 w-60">
-        <Button onClick={() => navigate("/landing")} className="flex flex-row items-center justify-start w-full h-12 text-lg font-medium text-red-500" variant="link"><DoorOpen className="mr-2"/>Log Out</Button>
+        <Button onClick={() => navigate("/")} className="flex flex-row items-center justify-start w-full h-12 text-lg font-medium text-red-500" variant="link"><DoorOpen className="mr-2"/>Log Out</Button>
         </div>
         </nav>
         </aside>

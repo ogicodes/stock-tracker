@@ -41,7 +41,7 @@ const chartConfig = {
 
 export function DashboardChart() {
   return (
-    <section className="bg-white rounded-md p-2 h-full">
+    <section className="bg-transparent rounded-md p-2 h-full">
       <ChartContainer className="aspect-auto h-[404px] w-full" config={chartConfig}>
         <AreaChart
           accessibilityLayer

@@ -3,7 +3,6 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableRow,
 } from "@/components/ui/table";
@@ -182,7 +181,6 @@ export default function AssetTable(): JSX.Element {
   return (
     <>
       <Table>
-        <TableCaption>A list of your recent invoices.</TableCaption>
         <TableBody>
           {data.map((item, index) => (
             <TableRow key={index}>

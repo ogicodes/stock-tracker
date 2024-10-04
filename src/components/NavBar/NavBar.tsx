@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { usePathname } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 
 export default function NavBar(): JSX.Element {
     const [search, setSearch] = useState("");
@@ -16,10 +16,10 @@ export default function NavBar(): JSX.Element {
     };
 
     function resolvePathname(pathname: string): string {
-        if (pathname === "/") return "Home";
-        if (pathname === "/assets") return "My Assets";
-        if (pathname === "/transactions") return "Transactions";
-        if (pathname === "/explore") return "Explore";
+        if (pathname === "/dashboard") return "Home";
+        if (pathname === "/dashboard/assets") return "My Assets";
+        if (pathname === "/dashboard/transactions") return "Transactions";
+        if (pathname === "/dashboard/explore") return "Explore";
         return "Page Not Found";
     }
 
