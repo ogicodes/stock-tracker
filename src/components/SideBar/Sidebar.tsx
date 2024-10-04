@@ -26,7 +26,7 @@ export default function Sidebar(): JSX.Element {
         router.push(href);
     }
     return (
-        <aside className="flex flex-col w-64 h-screen bg-[#04040D] text-white pt-10 border-r-2 border-[#212121]">
+        <aside className="flex flex-col w-64  sticky bg-[#04040D] text-white pt-10 border-r-2 border-[#212121]">
         <div className="flex flex-row justify-start items-center gap-2 px-10">
         <Origami size={22} />
         <h3 className="text-2xl font-medium text-center tracking-tight">Stocks</h3>
@@ -45,8 +45,8 @@ export default function Sidebar(): JSX.Element {
             </Button>
         ))}
         </div>
-        <div className="border-t-2 border-[#212121]">
-        <Button onClick={() => navigate("/landing")} className="flex flex-row items-center justify-start w-full h-12 text-lg font-medium" variant="link"><DoorOpen className="mr-2"/>Log Out</Button>
+        <div className="border-t-2 border-[#212121] fixed bottom-0 w-60">
+        <Button onClick={() => navigate("/landing")} className="flex flex-row items-center justify-start w-full h-12 text-lg font-medium text-red-500" variant="link"><DoorOpen className="mr-2"/>Log Out</Button>
         </div>
         </nav>
         </aside>

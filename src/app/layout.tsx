@@ -3,7 +3,7 @@ import "./globals.css";
 import Sidebar from "@/components/SideBar/Sidebar";
 import NavBar from "@/components/NavBar/NavBar";
 import { inter } from "@/utils/fonts";
-import Footer from "@/components/Footer/Footer";
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: "stocks",
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#04040D]">
       <body className={`${inter.className} antialiased`}>
         <div className="flex flex-row">
           <Sidebar />
@@ -25,6 +25,7 @@ export default function RootLayout({
             {children}
           </div>
         </div>
+        <Toaster />
       </body>
     </html>
   );
