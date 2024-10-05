@@ -24,18 +24,8 @@ export default function NavBar(): JSX.Element {
     }
 
   return (
-    <header className="flex flex-row justify-between items-center bg-[#04040D] text-white pt-10 pb-4 border-b-2 border-[#212121]">
+    <header className="flex flex-row justify-between items-center bg-[#04040D] text-white pt-10 pb-4 border-b-2 border-[#212121] w-svw">
       <h2 className="text-3xl ml-4">{resolvePathname(pathname)}</h2>
-      <div className="flex flex-row items-center">
-        <div className="relative">
-        <Search size={20} className="absolute ml-2 mt-2"/>
-        <Input className="pl-8" type="text" placeholder='Search' onChange={handleSearch} value={search} />
-        </div>
-        <Avatar className="mx-4">
-          <AvatarImage src="https://glory.pinkyellow.network/cache/containers/files/pereira-avatar.png/a4fe211f02afd65ceddd20449604fce1/pereira-avatar.webp" />
-          <AvatarFallback>OD</AvatarFallback>
-        </Avatar>
-      </div>
     </header>
   );
 }

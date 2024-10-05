@@ -5,7 +5,7 @@ import { DashboardChart } from "@/components/DashboardChart/DashboardChart";
 
 export default function Assets(): JSX.Element {
   return (
-    <main className="flex flex-col bg-[#04040D] text-white pt-6 overflow-y-hidden">
+    <main className="flex flex-col bg-[#04040D] text-white pt-6 overflow-y-hidden w-[85%]">
       <div className="ml-6 mb-6">
         <h1 className="text-5xl mb-6">Portfolio</h1>
         <h3 className="text-2xl mb-6">Portfolio Value</h3>

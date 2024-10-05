@@ -17,4 +17,26 @@ model User {
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
+  password String
+  stocks Stocks[]
+  transactions Transactions[]
+}
+
+model Stocks {
+  id    Int     @id @default(autoincrement())
+  name String
+  price Float
+  user User @relation(fields: [userId], references: [id])
+  userId Int
+  transactions Transactions[]
+}
+
+model Transactions {
+  id    Int     @id @default(autoincrement())
+  stockId Int
+  userId Int
+  price Float
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id])
+  stock Stocks @relation(fields: [stockId], references: [id])
 }
