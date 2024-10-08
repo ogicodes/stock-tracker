@@ -9,7 +9,7 @@ export async function loginAction( currentState: any, formData: FormData ): Prom
     const email = formData.get("email") as string
     const password = formData.get("password") as string
 
-    const res = await fetch("http://localhost:3001/api/auth/signin", {
+    const res = await fetch(`${process.env.API_URL}/api/auth/signin`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export async function signUpAction( currentState: any, formData: FormData ): Pro
     const password = formData.get("password") as string
     const name = formData.get("name") as string
 
-    const res = await fetch("http://localhost:3001/api/auth", {
+    const res = await fetch(`${process.env.API_URL}/api/auth`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
