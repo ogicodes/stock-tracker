@@ -7,17 +7,16 @@ This is a Stock Portfolio Web Application built using [Next.js](https://nextjs.o
 
 ### Challenge
 
-I wanted to chalenge my self and see if I could build a fullstack web app in one week. But to make things interesting I would build an app about a subject i have no knowledge of and would do it all using TypeScript, Next.js and Prisma. Due to the time constraint I knew I would only be able to get the MVP (Minimum Viable Product) done. For this reason I kept my features simple and used the ShadCN Ui library for the front end. 
+I wanted to challenge my self and see if I could build a fullstack web app in one week. But to make things interesting I would build an app about a subject I have no knowledge of and would do it all using TypeScript, Next.js and Prisma. Due to the time constraint I knew I would only be able to get the MVP (Minimum Viable Product) done. For this reason I kept my features simple and used the ShadCN Ui library for the front end. 
 
 
 ### Features
 
-- **New User:** I want to create an account so that I can securely log in and access my online closet.
-- **Registered User:** I want to log in and log out so that I can securely access my personal wardrobe and outfit suggestions.
+- **New User:** I want to create an account so that I can securely log in and crete a stock portfolio.
+- **Registered User:** I want to log in and log out so that I can securely access my portfolio.
   
 - **User Interface:** I want an intuitive and visually appealing interface so that I can easily navigate through the app and enjoy using it.
-- **Responsive Design:** I want the app to be responsive and work well on both web and mobile devices
-
+- **Responsive Design:** I want the app to be responsive and work well on both web and mobile devices.
 
 - **Add and remove stocks**: Easily add new stocks to your portfolio and remove existing ones.
 - **Live stock prices**: The app fetches up-to-date stock prices from a real-time financial API.
@@ -62,7 +61,7 @@ The goal of my sprints in this roadmap is to break down the project into 4 secti
 
 ## SPRINT 1 (Design)
 
-For this sprint I spent the entire first day of the project in figma making wireframes and playing with different designs for the dashboard. This took the majority of day 1 which may have been a lot of time but in hindsignt having the designs there made coding the webapp front go by very quickly. ive included my Finalized mockups above this section and my wireframe and first itterations of the mockups below:
+For this sprint I spent the entire first day of the project in figma making wireframes and playing with different designs for the dashboard. This took the majority of day 1 which may have been a lot of time but in hindsignt having the designs there made coding the webapp front end go by very quickly. I've included my Finalized mockups above this section and my wireframe and first itterations of the mockups below:
 
 **WireFrame:**
 ![image](https://github.com/user-attachments/assets/325ff657-11db-4f92-bc7c-df76e15e7899)
@@ -74,7 +73,7 @@ For this sprint I spent the entire first day of the project in figma making wire
 
 ## SPRINT 2 (Front End)
 
-After having the mockups finished I spent the next 2 days building the Dashboard, Assets, Transactions and Login/SignUp pages. Along with all of the components like the cards, charts and modals.
+After finishing the mockups I spent the next 2 days building the Dashboard, Assets, Transactions and Login/SignUp pages. Along with all of the components like the cards, charts and modals.
 
 ## SPRINT 3 (Logic)
 
