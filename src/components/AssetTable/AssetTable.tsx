@@ -97,7 +97,7 @@ export default function AssetTable( {stocks}: {stocks: Stock[]} ): JSX.Element {
   async function handlePurchase(stock: Stock) {
     try {
       const userId = await getUserId()
-      const res = await fetch(`${process.env.API_URL}/api/transactions/`, {method: 'POST', body: JSON.stringify({userId: parseInt(userId), stockId: stock.name , stockPrice: stock.price , amount: isBuy ? parseFloat(formattedAmount) : -parseFloat(formattedAmount) }),})
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/transactions/`, {method: 'POST', body: JSON.stringify({userId: parseInt(userId), stockId: stock.name , stockPrice: stock.price , amount: isBuy ? parseFloat(formattedAmount) : -parseFloat(formattedAmount) }),})
       if (!res.ok) {
         throw new Error("An error occurred. Please try again.")
       } else {

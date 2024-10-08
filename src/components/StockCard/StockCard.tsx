@@ -111,7 +111,7 @@ export default function StockCard({stock}: { stock: StockData }) {
   async function handlePurchase(stock: StockData) {
     try {
       const userId = await getUserId()
-      const res = await fetch(`${process.env.API_URL}/api/transactions/`, {method: 'POST', body: JSON.stringify({userId: parseInt(userId), stockId: stock.symbolName , stockPrice: stock.c, amount: parseFloat(formattedAmount) }),})
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/transactions/`, {method: 'POST', body: JSON.stringify({userId: parseInt(userId), stockId: stock.symbolName , stockPrice: stock.c, amount: parseFloat(formattedAmount) }),})
       if (!res.ok) {
         throw new Error("An error occurred. Please try again.")
       } else {

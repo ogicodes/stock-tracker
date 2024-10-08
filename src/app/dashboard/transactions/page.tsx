@@ -17,7 +17,7 @@ export default function Transactions(): JSX.Element {
   useEffect(() => {
     async function getTransactions() {
       const userId = await getUserId();
-      const response = await fetch(`${process.env.API_URL}/api/transactions/${userId}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/transactions/${userId}`);
       const data = await response.json();
       setTransactions(data);
     }
