@@ -45,7 +45,7 @@ I wanted to chalenge my self and see if I could build a fullstack web app in one
 - Assets
 - Transactions
 
-### Finalized Mockups
+## Finalized Mockups
 
 For the mockups I used Figma to design some simple but clean pages:
 
@@ -60,7 +60,7 @@ For the mockups I used Figma to design some simple but clean pages:
 The goal of my sprints in this roadmap is to break down the project into 4 sections, Design, Front End, Logic and Auth. Due to thew time constraint I have given my self having clear goals and a well structured roadmap is key. Below is the outline:
 
 
-### SPRINT 1 (Design)
+## SPRINT 1 (Design)
 
 For this sprint I spent the entire first day of the project in figma making wireframes and playing with different designs for the dashboard. This took the majority of day 1 which may have been a lot of time but in hindsignt having the designs there made coding the webapp front go by very quickly. ive included my Finalized mockups above this section and my wireframe and first itterations of the mockups below:
 
@@ -72,11 +72,11 @@ For this sprint I spent the entire first day of the project in figma making wire
 
 
 
-### SPRINT 2 (Front End)
+## SPRINT 2 (Front End)
 
 After having the mockups finished I spent the next 2 days building the Dashboard, Assets, Transactions and Login/SignUp pages. Along with all of the components like the cards, charts and modals.
 
-### SPRINT 3 (Logic)
+## SPRINT 3 (Logic)
 
 For this sprint I broke it down into a few sections: 
 - First I created a databse using Prisma. 
@@ -86,7 +86,7 @@ For this sprint I broke it down into a few sections:
     -- Due to these constraints I decided that for the MVP The graphs/charts on the site would use static data.
 - lastly I implemented the logic for buying and selling of the stock which is showen on your assets page and is linked with the transactions page so users can view their transactions.
 
-### SPRINT 4 (Auth)
+## SPRINT 4 (Auth)
 
 The last sprint was the one that took the longest. Ive never implemented auth on a webapp before and knew that this was not going to be ab easy feat. Initially the way I had done the auth I was using next/cookies and redirect but this was not working because the front end was not placing cookies in local storage so I scrapped the whole thing and started reading the docs on NextAuth.js and tried to do it that way. This was overkill and also much more complicated than it needed to be. With 2days left before my deadline I decided to step away from the project on saturday and come back with fresh eyes on sunday and start doing auth all over again. I'm a big fan of using Ai tools for learning and they are very helpful when it comes to explaining concepts im not familiar with but find it that they can only help me learn something if I know what I dont know. So with the help of ChatGPT and CoPilot I was able to get auth working and host the project on vercel.
 
