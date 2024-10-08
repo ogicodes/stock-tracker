@@ -113,6 +113,7 @@ export default function AssetTable( {stocks}: {stocks: Stock[]} ): JSX.Element {
         title: "Error",
         description: "An error occurred. Please try again.",
       });
+      console.error(error);
     }
   }
 

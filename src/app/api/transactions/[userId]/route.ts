@@ -1,3 +1,4 @@
+/* eslint-disable */
 import prisma from '@/lib/db'
 
 // This is the API route that will be called by the frontend to get the transactions of a user

@@ -127,6 +127,7 @@ export default function StockCard({stock}: { stock: StockData }) {
         title: "Error",
         description: "An error occurred. Please try again.",
       });
+      console.error(error);
     }
   }
   return (

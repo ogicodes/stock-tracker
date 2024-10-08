@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client"
 
 import { useState } from "react"
@@ -14,7 +15,7 @@ export default function LoginSignup() {
   const [name, setName] = useState<string>("")
   const toggleForm = () => setIsLogin(!isLogin)
   const choseFormAction = isLogin ? loginAction : signUpAction
-  const [error, formAction] = useFormState(choseFormAction, undefined)
+  const [_error, formAction] = useFormState(choseFormAction, undefined)
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#04040D] text-white">

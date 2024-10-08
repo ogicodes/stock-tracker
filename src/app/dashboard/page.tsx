@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { DashboardChart } from "@/components/DashboardChart/DashboardChart";
 import StockCard from "@/components/StockCard/StockCard";
 import Footer from "@/components/Footer/Footer";

@@ -1,19 +1,10 @@
 "use client"
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { usePathname } from "next/navigation";
-import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
-import { useState } from "react";
 
 export default function NavBar(): JSX.Element {
-    const [search, setSearch] = useState("");
     const pathname = usePathname();
 
-    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearch(e.target.value);
-        console.log(search);
-    };
 
     function resolvePathname(pathname: string): string {
         if (pathname === "/dashboard") return "Home";
