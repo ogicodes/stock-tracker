@@ -9,7 +9,7 @@ import { loginAction, signUpAction } from "@/actions/auth"
 import { useFormState } from "react-dom"
 
 export default function LoginSignup() {
-  const [isLogin, setIsLogin] = useState<boolean>(true)
+  const [isLogin, setIsLogin] = useState<boolean>(false)
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [name, setName] = useState<string>("")
