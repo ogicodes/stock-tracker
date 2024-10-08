@@ -1,5 +1,6 @@
 import prisma from '@/lib/db'
 
+// This is the API route that will be called by the frontend to get the transactions of a user
 export async function GET(_rquest: Request, { params }: { params: { userId: number } }) {
     const { userId } = params;
     const userIdFormated = parseInt(userId.toString())

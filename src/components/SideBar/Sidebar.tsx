@@ -19,9 +19,13 @@ const urls:Url[] = [
     { href: '/dashboard/Explore', icon: <Compass />, text: 'Explore', disabled: true },
 ]
 
-export default function Sidebar(): JSX.Element {
+export default function Sidebar({ logout }: {logout: () => Promise<void>}): JSX.Element {
     const router = useRouter();
     const pathname = usePathname();
+
+    const handleLogout = async () => {
+        await logout();
+    };
 
     function navigate(href: string): void {
         router.push(href);
@@ -48,7 +52,7 @@ export default function Sidebar(): JSX.Element {
         ))}
         </div>
         <div className="border-t-2 border-[#212121] fixed bottom-0 w-60">
-        <Button onClick={() => navigate("/")} className="flex flex-row items-center justify-start w-full h-12 text-lg font-medium text-red-500" variant="link"><DoorOpen className="mr-2"/>Log Out</Button>
+        <Button onClick={() => handleLogout() } className="flex flex-row items-center justify-start w-full h-12 text-lg font-medium text-red-500" variant="link"><DoorOpen className="mr-2"/>Log Out</Button>
         </div>
         </nav>
         </aside>

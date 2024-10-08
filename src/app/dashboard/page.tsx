@@ -1,6 +1,10 @@
 import { DashboardChart } from "@/components/DashboardChart/DashboardChart";
 import StockCard from "@/components/StockCard/StockCard";
 import Footer from "@/components/Footer/Footer";
+import { cookies } from "next/headers";
+import * as jose from "jose";
+
+const secret = new TextEncoder().encode(process.env.JWT_SECRET);
 
 export default async function Home() {
   const api_key = process.env.FINHUB_API_KEY;
@@ -31,15 +35,20 @@ export default async function Home() {
 
   }
 
-
   if (!response.ok) {
     throw new Error(data.message || "Something went wrong!");
   }
 
+  const token = cookies().get("token")?.value;
+  if (!token) {
+    throw new Error("Token not found");
+  }
+  const { payload } = await jose.jwtVerify(token, secret, {});
+  const { name } = payload as { name: string };
   return (
     <main className="flex flex-col bg-[#04040D] text-white pt-6 overflow-y-hidden">
       <section className=" pl-6 border-b-2 border-[#212121]">
-        <h1 className="text-5xl mb-6">Good Afternoon, Ogi</h1>
+        <h1 className="text-5xl mb-6">Good Afternoon, {name} </h1>
         <div className="pl-2">
           <h3 className="text-2xl mb-6">Top Movers Today</h3>
           <div className="flex flex-row overflow-x-scroll w-[85%]">

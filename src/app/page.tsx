@@ -4,12 +4,17 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useRouter } from "next/navigation"
+import { loginAction, signUpAction } from "@/actions/auth"
+import { useFormState } from "react-dom"
 
 export default function LoginSignup() {
-  const [isLogin, setIsLogin] = useState(true)
-  const router = useRouter()
+  const [isLogin, setIsLogin] = useState<boolean>(true)
+  const [email, setEmail] = useState<string>("")
+  const [password, setPassword] = useState<string>("")
+  const [name, setName] = useState<string>("")
   const toggleForm = () => setIsLogin(!isLogin)
+  const choseFormAction = isLogin ? loginAction : signUpAction
+  const [error, formAction] = useFormState(choseFormAction, undefined)
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#04040D] text-white">
@@ -17,22 +22,22 @@ export default function LoginSignup() {
         <h1 className="text-2xl font-bold mb-6 text-center">
           {isLogin ? "Login" : "Sign Up"}
         </h1>
-        <form className="space-y-4">
+        <form action={formAction} className="space-y-4">
           {!isLogin && (
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
-              <Input id="name" type="text" required />
+              <Input name="name" value={name} onChange={ (e) => setName(e.target.value) } id="name" type="text" required />
             </div>
           )}
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" required />
+            <Input name="email" value={email} onChange={ (e) => setEmail(e.target.value) } id="email" type="email" required />
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" required />
+            <Input name="password" value={password} onChange={ (e) => setPassword(e.target.value) } id="password" type="password" required />
           </div>
-          <Button onClick={() => {router.push('/dashboard')}} type="submit" className="w-full">
+          <Button type="submit" className="w-full">
             {isLogin ? "Login" : "Sign Up"}
           </Button>
         </form>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { format } from "date-fns";
+import getUserId from "@/actions/sessionActions";
 
 interface Transaction {
   stock: string;
@@ -15,7 +16,8 @@ interface Transaction {
 export default function Transactions(): JSX.Element {
   useEffect(() => {
     async function getTransactions() {
-      const response = await fetch("/api/transactions/1");
+      const userId = await getUserId();
+      const response = await fetch(`/api/transactions/${userId}`);
       const data = await response.json();
       setTransactions(data);
     }

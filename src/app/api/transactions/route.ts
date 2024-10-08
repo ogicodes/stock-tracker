@@ -12,7 +12,7 @@ export async function POST(request: Request) {
             data: {
                 price: stockPrice,
                 name: stockId,
-                userId: userId,
+                userId
             }
         })
         const createdTransaction = await prisma.transactions.create({
